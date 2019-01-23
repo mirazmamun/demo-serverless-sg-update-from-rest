@@ -1,4 +1,4 @@
-# Serverless Service for Security Group (SG) Update
+# Serverless Service for Security Group (SG) Update Using REST Endpoint
 This microservice allows users with authorization keys to update SG. It will create the SG if does not exist already and will return `500` if the rule is already existing.
 
 ## How to Deploy
