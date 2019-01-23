@@ -40,6 +40,6 @@ An example with `curl` would be:
 curl -d '{"sgName":"SG_DEVELOPER_TEST","IP":"1.1.1.2"}' -H "x-api-key: <your API GW key>" -H "Content-Type: application/json" -X POST https://cjdn3h9c9a.execute-api.ap-southeast-2.amazonaws.com/dev/update
 ```
 
-## Unit Testss
+## Unit Tests
 
 This project is equipped with `mocha` and `chaijs` assertion to test some library function used in Lambda handler and they are under `tests/unit` folder. To test those just run `./node_modules/.bin/mocha <relative path of test spec>`
