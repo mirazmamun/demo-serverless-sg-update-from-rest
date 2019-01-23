@@ -2,7 +2,7 @@ const assert = require('assert');
 const expect = require('chai').expect;
 const should = require('chai').should();
 const SG = require('../../lib/SG');
-it.only('should find an existing SG', function () {
+it('should find an existing SG', function () {
     SG.findSG({sgName: SG.defaults().DEFAULT_SG_NAME})
         .then((res) => {
             console.log(res);

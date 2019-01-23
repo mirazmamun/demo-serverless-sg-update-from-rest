@@ -28,7 +28,7 @@ There are two ways you can provision the stack. First one uses built CF template
 3. The default setup will take care of linking executable in POSIX environment. Alternatively you can install `serverless` globally. `npm install -g serverless` or checkout [this link](https://serverless.com/framework/docs/providers/aws/guide/quick-start#pre-requisites)
 4. Run ```./node_modules/.bin/serverless deploy``` or is `serverless` is globally available in you environment, run ```serverless deploy```. This command will create the CF template locally and will create the CF stack in the target region. If you want to take the CF template yourself then modify and run it try ```serverless package --package <target folder to create packages to>```. Try the [docs](https://serverless.com/framework/docs/providers/aws/guide/packaging/) to learn more. This command will also print out the api key enforced on the endpoint. This API key is there to protect unauthorized access to it.
 
-## How to test
+## How to test stack
 
 After the serverless service is deployed, you can use either the API Gateway to test out the endpoint or use `curl` for it. To protect the API Gateway endpoint, we are enforcing API Key which will be automatically printed out when you do run `deploy` command. Otherwise, you can go into the console and check it out yourself. You must pass in the the API key with the request. 
 The POST payload must be JSON encoded and will need to have the following footprint:
@@ -39,3 +39,7 @@ An example with `curl` would be:
 ```
 curl -d '{"sgName":"SG_DEVELOPER_TEST","IP":"1.1.1.2"}' -H "x-api-key: <your API GW key>" -H "Content-Type: application/json" -X POST https://cjdn3h9c9a.execute-api.ap-southeast-2.amazonaws.com/dev/update
 ```
+
+## Unit Testss
+
+This project is equipped with `mocha` and `chaijs` assertion to test some library function used in Lambda handler and they are under `tests/unit` folder. To test those just run `./node_modules/.bin/mocha <relative path of test spec>`
